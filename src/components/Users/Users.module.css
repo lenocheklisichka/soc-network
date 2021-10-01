@@ -1,0 +1,65 @@
+.usersTitle {
+    padding: 10px;
+    font-size: 20px;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+}
+
+.btn {
+    background-color: coral;
+    border: 1px solid coral;
+}
+
+.btn2 {
+    background-color: white;
+    border: 1px solid white;
+}
+
+.btn, .btn2 {
+    border-radius: 20px;
+    margin-left: 15px;
+}
+
+.blockName {
+    display: flex;
+    border: 1px solid gray;
+    border-radius: 10px;
+    background-color: white;
+    width: 500px;
+    height: 50px;
+    padding: 10px;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.boxUsers {
+    display: flex;
+    margin-top: 20px;
+}
+
+.status {
+    padding-top: 10px;
+}
+
+.boxUser {
+    padding: 20px 20px 20px 50px;
+}
+
+.city {
+    padding-top: 10px;
+}
+
+.button {
+    display: flex;
+    width: 100px;
+    margin: 0 auto;
+    padding: 10px 15px;
+    background-color: coral;
+    border-radius: 10px;
+    border: 1px solid coral;
+}

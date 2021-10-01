@@ -1,0 +1,38 @@
+
+.dialogs {
+    display: grid;
+    grid-template-columns: 4fr 10fr;
+}
+
+.messageBox {
+    display: grid;
+    grid-template-columns: 5fr 5fr;
+}
+
+.namesItem {
+    font-size: 17px;
+}
+
+.newMessage {
+    display: flex;
+    width: 400px;
+    margin: 20px auto;
+}
+
+.textarea {
+    width: 400px;
+    height: 70px;
+    border-radius: 10px;
+    padding: 10px;
+    outline: none;
+    border: none;
+}
+
+.sendMessage {
+    width: 70px;
+    padding: 5px;
+    background-color: coral;
+    border-radius: 10px;
+    border: 2px solid coral;
+    margin: 60px 0 0 20px;
+}

@@ -1,0 +1,15 @@
+
+.messages {
+    width: 250px;
+    padding-top: 40px;
+}
+
+.message {
+    margin-top: 20px;
+    border: 1px solid coral;
+    border-radius: 20px;
+    width: 290px;
+    height: 80px;
+    background-color: white;
+    padding: 10px
+}
