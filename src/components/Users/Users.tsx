@@ -8,7 +8,7 @@ const Users = (props: UsersPropsType) => {
 
    useEffect(()=>{
        if (props.usersPage.users.length === 0) {
-           axios.get("https://social-network.samuraijs.com/api/1.0/users").then((response:any) => {
+           axios.get("https://social-network.samuraijs.com/api/1.0/users", { headers: {'API-KEY': 'd41ea747-ce32-41f3-af2e-99d81acb40a6'} }).then((response:any) => {
                props.setUsers(response.data.items)
            });
        }
