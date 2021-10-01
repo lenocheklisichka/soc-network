@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/lenocheklisichka/soc-network/static/css/main.8304aed1.chunk.css",
+    "main.js": "/lenocheklisichka/soc-network/static/js/main.8a43f6a4.chunk.js",
+    "main.js.map": "/lenocheklisichka/soc-network/static/js/main.8a43f6a4.chunk.js.map",
+    "runtime-main.js": "/lenocheklisichka/soc-network/static/js/runtime-main.5a771b80.js",
+    "runtime-main.js.map": "/lenocheklisichka/soc-network/static/js/runtime-main.5a771b80.js.map",
+    "static/js/2.0800823b.chunk.js": "/lenocheklisichka/soc-network/static/js/2.0800823b.chunk.js",
+    "static/js/2.0800823b.chunk.js.map": "/lenocheklisichka/soc-network/static/js/2.0800823b.chunk.js.map",
+    "static/js/3.db4a5efd.chunk.js": "/lenocheklisichka/soc-network/static/js/3.db4a5efd.chunk.js",
+    "static/js/3.db4a5efd.chunk.js.map": "/lenocheklisichka/soc-network/static/js/3.db4a5efd.chunk.js.map",
+    "index.html": "/lenocheklisichka/soc-network/index.html",
+    "static/css/main.8304aed1.chunk.css.map": "/lenocheklisichka/soc-network/static/css/main.8304aed1.chunk.css.map",
+    "static/js/2.0800823b.chunk.js.LICENSE.txt": "/lenocheklisichka/soc-network/static/js/2.0800823b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5a771b80.js",
+    "static/js/2.0800823b.chunk.js",
+    "static/css/main.8304aed1.chunk.css",
+    "static/js/main.8a43f6a4.chunk.js"
+  ]
+}
