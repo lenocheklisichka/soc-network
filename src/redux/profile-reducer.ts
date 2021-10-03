@@ -19,7 +19,6 @@ const profileReducer = (state: InitialStateType = initialState, action: ActionsT
     console.log("Update " + action.type)
     switch (action.type) {
         case ADD_POST: {
-            debugger
             const newPost: PostType = {
                 id: v1(),
                 message: state.newPostText,
