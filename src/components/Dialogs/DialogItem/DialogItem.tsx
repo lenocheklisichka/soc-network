@@ -10,7 +10,7 @@ const DialogItem: React.FC<DialogType> = (props) => {
                 <img src={props.avatar} alt={"ava"} className={classes.avatarImg}/>
             </NavLink>
             <div className={classes.names}>
-                <NavLink to={"/dialogs/" + props.id} activeClassName={classes.active}>{props.name}</NavLink>
+                <NavLink to={"/dialogs/" + props.id} activeClassName={classes.activeLink}>{props.name}</NavLink>
             </div>
         </div>
     );

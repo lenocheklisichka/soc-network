@@ -11,14 +11,21 @@
 .names {
     display: flex;
     align-items: center;
-    color: black;
 }
-.active {
+.names :hover {
     color: gold;
+    cursor: hand;
+}
+.names .activeLink {
+    color: coral;
+    cursor: pointer;
+    pointer-events: auto;
+    font-weight: bold;
 }
 .names a {
     text-decoration: none;
     padding-left: 10px;
+    color: black;
 }
 
 
