@@ -1,8 +1,20 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
-import classes from "./Navbar.module.css"
+import classes from "./Navbar.module.css";
+import {initialStateSidebarType} from "../../redux/sidebar-reducers";
+import woman from "../Navbar/images-icons/woman-avatar.png";
 
-function Navbar() {
+type SidebarPropsType = {
+    sidebar: initialStateSidebarType
+}
+
+
+export const Navbar = (props: SidebarPropsType) => {
+
+    const friendElements = props.sidebar.friends.map(f =>
+       <div className={classes.friend} key={f.id}><img src={woman} alt=''/>{f.name}</div>
+    )
+
     return (
         <div className={classes.nav}>
             <div className={classes.item}>
@@ -22,6 +34,11 @@ function Navbar() {
             </div>
             <div className={classes.itemSettings}>
                 <NavLink to={"/settings"} activeClassName={classes.activeLink}>Settings</NavLink>
+            </div>
+
+            <div className={classes.titleFriends}>Friends online:</div>
+            <div className={classes.friends}>
+                {friendElements}
             </div>
         </div>
     );

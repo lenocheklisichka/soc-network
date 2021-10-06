@@ -9,15 +9,50 @@
     padding-top: 15px;
 }
 
-.item a,.itemSettings a {
+.item a, .itemSettings a {
     color: #fff;
     text-decoration: none;
 }
 
- .item .activeLink {
-    color: blue;
+.item :hover, .itemSettings :hover {
+    color: dodgerblue;
+    font-weight: bold;
+}
+
+.item .activeLink, .itemSettings .activeLink {
+    color: aquamarine;
+    font-weight: bold;
 }
 
 .itemSettings {
     margin-top: 50px;
+}
+
+.friend img {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: 2px solid white;
+    background-color: aquamarine;
+}
+
+.friend {
+    margin: 15px;
+    color: white;
+}
+
+.friends {
+    display: flex;
+    flex-wrap: wrap;
+    width: 260px;
+    margin-top: 20px;
+
+}
+
+.titleFriends {
+    color: white;
+    margin-top: 50px;
+    font-size: 22px;
+    font-weight: bold;
 }
