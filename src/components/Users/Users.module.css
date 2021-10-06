@@ -1,6 +1,8 @@
 .usersTitle {
     padding: 10px;
-    font-size: 20px;
+    font-size: 22px;
+    color: coral;
+    font-weight: bold;
 }
 
 .avatar {
@@ -29,7 +31,7 @@
     border: 1px solid gray;
     border-radius: 10px;
     background-color: white;
-    width: 500px;
+    width: 600px;
     height: 50px;
     padding: 10px;
     justify-content: space-between;
@@ -62,4 +64,19 @@
     background-color: coral;
     border-radius: 10px;
     border: 1px solid coral;
+}
+
+.selectedPage {
+    font-weight: bold;
+}
+
+.pagesNumber {
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+    color: coral;
+    margin: 20px auto;
+    width: 400px;
+    text-align: center;
+    font-size: 22px;
 }

@@ -7,14 +7,39 @@ import React from "react";
 class Users extends React.Component<UsersPropsType> {
 
     componentDidMount() {
-        axios.get("https://social-network.samuraijs.com/api/1.0/users", {headers: {'API-KEY': 'd41ea747-ce32-41f3-af2e-99d81acb40a6'}}).then((response: any) => {
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`, {headers: {'API-KEY': 'd41ea747-ce32-41f3-af2e-99d81acb40a6'}}).then((response: any) => {
+            this.props.setUsers(response.data.items)
+            // this.props.setTotalUsersCount(response.data.totalCount)
+        });
+    }
+
+    onPageChanged = (pageNumber: number) => {
+        this.props.serCurrentPage(pageNumber)
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`, {headers: {'API-KEY': 'd41ea747-ce32-41f3-af2e-99d81acb40a6'}}).then((response: any) => {
             this.props.setUsers(response.data.items)
         });
     }
 
+
     render() {
+        let pageCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize);
+
+        let pages = []
+        for (let i = 1; i <= pageCount; i++) {
+            pages.push(i)
+        }
+
         return (
             <div>
+                <div className={classes.pagesNumber}>
+                    {pages.map(p => {
+                        return <span className={this.props.currentPage === p ? classes.selectedPage : ""}
+                                     onClick={(e) => {
+                                         this.onPageChanged(p)
+                                     }}>{p}</span>
+
+                    })}
+                </div>
                 <div className={classes.boxUser}>
                     <div className={classes.usersTitle}>Users</div>
                     {

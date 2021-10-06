@@ -1,6 +1,6 @@
 import {addPostActionCreator, changeNewTextActionCreator} from "./profile-reducer";
 import {sendMessageActionCreator, updateNewMessageBodyCreator} from "./dialogs-reducer";
-import {followAC, setUsersAC, unfollowAC} from "./users-reducer";
+import {followAC, setCurrentPageAC, setUsersAC, unfollowAC} from "./users-reducer";
 
 export type PostType = {
     id: string;
@@ -33,10 +33,10 @@ export type UserType = {
     // location: UserLocation
 }
 
-export type UserLocation = {
-    country: string,
-    city: string
-}
+// export type UserLocation = {
+//     country: string,
+//     city: string
+// }
 
 export type ProfilePageType = {
     posts: Array<PostType>;
@@ -53,4 +53,5 @@ export type RootStateType = {
 }
 export type ActionsTypes = ReturnType<typeof addPostActionCreator> | ReturnType<typeof changeNewTextActionCreator>
     | ReturnType<typeof updateNewMessageBodyCreator> | ReturnType<typeof sendMessageActionCreator> |
-    ReturnType<typeof followAC> | ReturnType<typeof unfollowAC> | ReturnType<typeof setUsersAC>;
+    ReturnType<typeof followAC> | ReturnType<typeof unfollowAC> | ReturnType<typeof setUsersAC> | ReturnType<typeof setCurrentPageAC>
+    // ReturnType<typeof setTotalUsersCountAC>;
