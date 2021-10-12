@@ -1,16 +1,24 @@
 import {v1} from "uuid";
-import {ActionsTypes, PostType, ProfilePageType} from "./types";
+import {ActionsTypes, PostType, ProfileType} from "./types";
+
 
 const ADD_POST = "ADD-POST";
 const CHANGE_NEW_POST_TEXT = "CHANGE-NEW-POST-TEXT";
+const SET_USER_PROFILE = "SET-USER-PROFILE";
+
+type setUsersProfileAT = {
+    type: 'SET-USER-PROFILE'
+    profile: any
+}
 
 const initialState = {
     newPostText: "",
     posts: [
         {id: v1(), message: "Hi, my name is Elena! This is my first post!", likesCount: 65},
         {id: v1(), message: "I travel a lot around the world!", likesCount: 70},
-        {id: v1(), message: "I work as a frontend developer! A very demanded profession!", likesCount: 50},
-    ]
+        {id: v1(), message: "I'm studying to be a front-end developer! A very demanded profession!", likesCount: 50},
+    ],
+    profile: null,
 }
 
 export type InitialStateType = typeof initialState
@@ -31,10 +39,10 @@ const profileReducer = (state: InitialStateType = initialState, action: ActionsT
             }
         }
         case CHANGE_NEW_POST_TEXT: {
-            return {
-                ...state,
-                newPostText: action.newText
-            }  as ProfilePageType
+            return <InitialStateType>{...state, newPostText: action.newText}
+        }
+        case SET_USER_PROFILE: {
+            return { ...state, profile: action.profile }
         }
         default:
             return state;
@@ -43,15 +51,22 @@ const profileReducer = (state: InitialStateType = initialState, action: ActionsT
 
 export const addPostActionCreator = () => {
     return {
-        type: "ADD-POST"
+        type: ADD_POST,
     } as const
 }
 
 export const changeNewTextActionCreator = (newText: string | undefined) => {
     return {
-        type: "CHANGE-NEW-POST-TEXT",
+        type: CHANGE_NEW_POST_TEXT,
         newText,
     } as const
+}
+
+export const setUserProfileAC = (profile: any): setUsersProfileAT => {
+    return {
+        type: SET_USER_PROFILE,
+        profile,
+    }
 }
 
 export default profileReducer;

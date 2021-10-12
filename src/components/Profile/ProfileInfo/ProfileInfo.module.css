@@ -18,3 +18,19 @@
 .profile {
     display: flex;
 }
+
+.profileName {
+    text-align: center;
+    margin: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.contacts {
+    margin: 10px;
+}
+
+.contact {
+    margin-top: 10px;
+    font-weight: bold;
+}

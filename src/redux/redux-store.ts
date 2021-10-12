@@ -20,4 +20,7 @@ export type AppRootState = ReturnType<typeof rootReducers>
 // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
 export type AppDispatch = typeof store.dispatch
 
+// @ts-ignore
+window.store= store
+
 export default store;

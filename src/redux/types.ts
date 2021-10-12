@@ -1,6 +1,7 @@
-import {addPostActionCreator, changeNewTextActionCreator} from "./profile-reducer";
+import {addPostActionCreator, changeNewTextActionCreator, setUserProfileAC} from "./profile-reducer";
 import {sendMessageActionCreator, updateNewMessageBodyCreator} from "./dialogs-reducer";
-import {followAC, setCurrentPageAC, setUsersAC, unfollowAC} from "./users-reducer";
+import {followAC, setCurrentPageAC, setUsersAC, toggleIsFetchingAC, unfollowAC} from "./users-reducer";
+
 
 export type PostType = {
     id: string;
@@ -42,6 +43,29 @@ export type ProfilePageType = {
     posts: Array<PostType>;
     newPostText: string;
 }
+
+export type  ProfileType = {
+    aboutMe: string
+    contacts: {
+        facebook: string
+        website: string | null
+        vk: string
+        twitter: string
+        instagram: string
+        youtube: string | null
+        github: string
+        mainLink: string | null
+    }
+    lookingForAJob: boolean
+    lookingForAJobDescription: string
+    fullName: string
+    userId: string
+    photos: {
+        small: string
+        large: string
+    }
+}
+
 export type DialogsPageType = {
     dialogs: Array<DialogType>;
     messages: Array<MessageType>;
@@ -53,5 +77,6 @@ export type RootStateType = {
 }
 export type ActionsTypes = ReturnType<typeof addPostActionCreator> | ReturnType<typeof changeNewTextActionCreator>
     | ReturnType<typeof updateNewMessageBodyCreator> | ReturnType<typeof sendMessageActionCreator> |
-    ReturnType<typeof followAC> | ReturnType<typeof unfollowAC> | ReturnType<typeof setUsersAC> | ReturnType<typeof setCurrentPageAC>
+    ReturnType<typeof followAC> | ReturnType<typeof unfollowAC> | ReturnType<typeof setUsersAC> | ReturnType<typeof setCurrentPageAC> |
+    ReturnType<typeof toggleIsFetchingAC> | ReturnType<typeof setUserProfileAC>;
     // ReturnType<typeof setTotalUsersCountAC>;

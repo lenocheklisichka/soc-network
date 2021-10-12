@@ -4,13 +4,15 @@ const FOLLOW = "FOLLOW";
 const UNFOLLOW = "UNFOLLOW";
 const SET_USERS = "SET-USERS";
 const SET_CURRENT_PAGE = "SET-CURRENT-PAGE";
+const TOGGLE_IS_FETCHING = "TOGGLE-IS-FETCHING";
 // const SET_TOTAL_USERS_COUNT = "SET-TOTAL-USERS-COUNT";
 
 const defaultState: InitialStateType = {
     users: [],
     pageSize: 5,
     totalUsersCount: 80,
-    currentPage: 1
+    currentPage: 1,
+    isFetching: false,
 }
 
 export type InitialStateType = {
@@ -18,9 +20,10 @@ export type InitialStateType = {
     pageSize: number
     totalUsersCount: number
     currentPage: number
+    isFetching: boolean
 }
 
-const usersReducer = (state: InitialStateType = defaultState, action: ActionsTypes) : InitialStateType=> {
+const usersReducer = (state: InitialStateType = defaultState, action: ActionsTypes) : InitialStateType => {
     switch (action.type) {
         case FOLLOW :
             console.log("switch" + state.users)
@@ -53,6 +56,8 @@ const usersReducer = (state: InitialStateType = defaultState, action: ActionsTyp
             return {...state, users: action.users}
         case  SET_CURRENT_PAGE:
             return {...state, currentPage: action.currentPage}
+        case TOGGLE_IS_FETCHING :
+            return {...state, isFetching: action.isFetching}
         // case  SET_TOTAL_USERS_COUNT:
         //     return {...state, totalUsersCount: action.count}
         default:
@@ -95,5 +100,12 @@ export const setCurrentPageAC = (currentPage: number) => {
 //         count: totalUsersCount,
 //     } as const
 // }
+
+export const toggleIsFetchingAC = (isFetching: boolean) => {
+    return {
+        type: TOGGLE_IS_FETCHING,
+        isFetching,
+    } as const
+}
 
 export default usersReducer;
