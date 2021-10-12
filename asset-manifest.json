@@ -1,22 +1,24 @@
 {
   "files": {
-    "main.css": "/soc-network/static/css/main.8304aed1.chunk.css",
-    "main.js": "/soc-network/static/js/main.d18a1630.chunk.js",
-    "main.js.map": "/soc-network/static/js/main.d18a1630.chunk.js.map",
-    "runtime-main.js": "/soc-network/static/js/runtime-main.da6b96fb.js",
-    "runtime-main.js.map": "/soc-network/static/js/runtime-main.da6b96fb.js.map",
-    "static/js/2.eae3c579.chunk.js": "/soc-network/static/js/2.eae3c579.chunk.js",
-    "static/js/2.eae3c579.chunk.js.map": "/soc-network/static/js/2.eae3c579.chunk.js.map",
-    "static/js/3.db4a5efd.chunk.js": "/soc-network/static/js/3.db4a5efd.chunk.js",
-    "static/js/3.db4a5efd.chunk.js.map": "/soc-network/static/js/3.db4a5efd.chunk.js.map",
+    "main.css": "/soc-network/static/css/main.360b359d.chunk.css",
+    "main.js": "/soc-network/static/js/main.7824bbfc.chunk.js",
+    "main.js.map": "/soc-network/static/js/main.7824bbfc.chunk.js.map",
+    "runtime-main.js": "/soc-network/static/js/runtime-main.a570e162.js",
+    "runtime-main.js.map": "/soc-network/static/js/runtime-main.a570e162.js.map",
+    "static/js/2.37923fca.chunk.js": "/soc-network/static/js/2.37923fca.chunk.js",
+    "static/js/2.37923fca.chunk.js.map": "/soc-network/static/js/2.37923fca.chunk.js.map",
+    "static/js/3.d0159fbf.chunk.js": "/soc-network/static/js/3.d0159fbf.chunk.js",
+    "static/js/3.d0159fbf.chunk.js.map": "/soc-network/static/js/3.d0159fbf.chunk.js.map",
     "index.html": "/soc-network/index.html",
-    "static/css/main.8304aed1.chunk.css.map": "/soc-network/static/css/main.8304aed1.chunk.css.map",
-    "static/js/2.eae3c579.chunk.js.LICENSE.txt": "/soc-network/static/js/2.eae3c579.chunk.js.LICENSE.txt"
+    "static/css/main.360b359d.chunk.css.map": "/soc-network/static/css/main.360b359d.chunk.css.map",
+    "static/js/2.37923fca.chunk.js.LICENSE.txt": "/soc-network/static/js/2.37923fca.chunk.js.LICENSE.txt",
+    "static/media/preloader.e2ef5a7f.gif": "/soc-network/static/media/preloader.e2ef5a7f.gif",
+    "static/media/woman-avatar.b562e6d8.png": "/soc-network/static/media/woman-avatar.b562e6d8.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.da6b96fb.js",
-    "static/js/2.eae3c579.chunk.js",
-    "static/css/main.8304aed1.chunk.css",
-    "static/js/main.d18a1630.chunk.js"
+    "static/js/runtime-main.a570e162.js",
+    "static/js/2.37923fca.chunk.js",
+    "static/css/main.360b359d.chunk.css",
+    "static/js/main.7824bbfc.chunk.js"
   ]
 }
