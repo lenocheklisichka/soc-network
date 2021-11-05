@@ -1,16 +1,17 @@
-import { AppRootState} from "../../redux/redux-store";
+import {AppRootState} from "../../redux/redux-store";
 import {
     followAC,
     setCurrentPageAC,
-    setUsersAC, toggleIsFetchingAC,
+    setUsersAC, toggleFollowingProgress, toggleIsFetchingAC,
     unfollowAC
 } from "../../redux/users-reducer";
 import {UserType} from "../../redux/types";
 import {connect} from "react-redux";
 import React from "react";
-import axios from "axios";
 import Users from "./Users";
 import Preloader from "../common/Preloader/Preloader";
+import {usersAPI} from "../../api/api";
+
 
 export type UsersPropsType = {
     users: Array<UserType>
@@ -21,26 +22,31 @@ export type UsersPropsType = {
     totalUsersCount: number
     currentPage: number
     onPageChanged: (pageNumber: number) => void
+    followingInProgress: Array<string>
+    toggleFollowingProgress:  (isFetching: boolean, userID: string) => void
 }
 
 class UsersContainer extends React.Component<any> {
 
     componentDidMount() {
         this.props.toggleIsFetching(true)
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`, {headers: {'API-KEY': 'd41ea747-ce32-41f3-af2e-99d81acb40a6'}}).then((response: any) => {
-            this.props.toggleIsFetching(false)
-            this.props.setUsers(response.data.items)
-            // this.props.setTotalUsersCount(response.data.totalCount)
-        });
+
+            usersAPI.getUsers(this.props.currentPage, this.props.pageSize).then((data: any) => {
+                this.props.toggleIsFetching(false)
+                this.props.setUsers(data.items)
+                // this.props.setTotalUsersCount(data.totalCount)
+            });
     }
 
     onPageChanged = (pageNumber: number) => {
         this.props.setCurrentPage(pageNumber)
         this.props.toggleIsFetching(true)
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`, {headers: {'API-KEY': 'd41ea747-ce32-41f3-af2e-99d81acb40a6'}}).then((response: any) => {
-            this.props.toggleIsFetching(false)
-            this.props.setUsers(response.data.items)
-        });
+
+            usersAPI.getUsers(pageNumber, this.props.pageSize)
+            .then((data: any) => {
+                this.props.toggleIsFetching(false)
+                this.props.setUsers(data.items)
+            });
     }
 
 
@@ -52,10 +58,12 @@ class UsersContainer extends React.Component<any> {
                          totalUsersCount={this.props.totalUsersCount}
                          pageSize={this.props.pageSize}
                          currentPage={this.props.currentPage}
-                         follow={this.props.follow}
+                         follow={this.props.followAC}
                          unfollow={this.props.unfollow}
                          onPageChanged={this.onPageChanged}
-                         isFetching={this.props.isFetching}/>
+                         isFetching={this.props.isFetching}
+                         followingInProgress={this.props.followingInProgress}
+                         toggleFollowingProgress={this.props.toggleFollowingProgress}/>
             }
         </>
     }
@@ -66,7 +74,8 @@ type MapStatePropsType = {
     totalUsersCount: number;
     pageSize: number;
     currentPage: number;
-    isFetching: boolean
+    isFetching: boolean;
+    followingInProgress: Array<string>
 }
 
 // type MapDispatchPropsType = {
@@ -87,6 +96,7 @@ let mapStateToProps = (state: AppRootState): MapStatePropsType => {
         totalUsersCount: state.usersPage.totalUsersCount,
         currentPage: state.usersPage.currentPage,
         isFetching: state.usersPage.isFetching,
+        followingInProgress: state.usersPage.followingInProgress,
     }
 }
 
@@ -114,10 +124,11 @@ let mapStateToProps = (state: AppRootState): MapStatePropsType => {
 // }
 
 export default connect(mapStateToProps, {
-    follow: followAC,
+    followAC,
     unfollow: unfollowAC,
     setUsers: setUsersAC,
     setCurrentPage: setCurrentPageAC,
     toggleIsFetching: toggleIsFetchingAC,
+    toggleFollowingProgress
     //setTotalUsersCount: setTotalUsersCountAC,
- } )(UsersContainer);
+})(UsersContainer);

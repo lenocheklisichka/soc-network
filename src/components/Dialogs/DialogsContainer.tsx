@@ -1,4 +1,3 @@
-
 import {sendMessageActionCreator, updateNewMessageBodyCreator} from "../../redux/dialogs-reducer";
 import Dialogs from "./Dialogs";
 import {DialogsPageType} from "../../redux/types";

@@ -1,6 +1,13 @@
 import {addPostActionCreator, changeNewTextActionCreator, setUserProfileAC} from "./profile-reducer";
 import {sendMessageActionCreator, updateNewMessageBodyCreator} from "./dialogs-reducer";
-import {followAC, setCurrentPageAC, setUsersAC, toggleIsFetchingAC, unfollowAC} from "./users-reducer";
+import {
+    followAC,
+    setCurrentPageAC,
+    setUsersAC, toggleFollowingProgress,
+    toggleIsFetchingAC,
+    unfollowAC
+} from "./users-reducer";
+import {setAuthUserData} from "./auth-reducer";
 
 
 export type PostType = {
@@ -78,5 +85,5 @@ export type RootStateType = {
 export type ActionsTypes = ReturnType<typeof addPostActionCreator> | ReturnType<typeof changeNewTextActionCreator>
     | ReturnType<typeof updateNewMessageBodyCreator> | ReturnType<typeof sendMessageActionCreator> |
     ReturnType<typeof followAC> | ReturnType<typeof unfollowAC> | ReturnType<typeof setUsersAC> | ReturnType<typeof setCurrentPageAC> |
-    ReturnType<typeof toggleIsFetchingAC> | ReturnType<typeof setUserProfileAC>;
+    ReturnType<typeof toggleIsFetchingAC> | ReturnType<typeof setUserProfileAC> | ReturnType<typeof setAuthUserData> | ReturnType<typeof toggleFollowingProgress>;
     // ReturnType<typeof setTotalUsersCountAC>;
