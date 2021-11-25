@@ -1,11 +1,9 @@
 import {addPostActionCreator, changeNewTextActionCreator, setUserProfileAC} from "./profile-reducer";
 import {sendMessageActionCreator, updateNewMessageBodyCreator} from "./dialogs-reducer";
 import {
-    followAC,
-    setCurrentPageAC,
-    setUsersAC, toggleFollowingProgress,
-    toggleIsFetchingAC,
-    unfollowAC
+     followSuccess, setCurrentPage,
+    setUsers, toggleFollowingProgress,
+    toggleIsFetching, unfollowSuccess,
 } from "./users-reducer";
 import {setAuthUserData} from "./auth-reducer";
 
@@ -78,12 +76,23 @@ export type DialogsPageType = {
     messages: Array<MessageType>;
     newMessageBody: string;
 }
-export type RootStateType = {
-    profilePage: ProfilePageType;
-    dialogsPage: DialogsPageType;
-}
-export type ActionsTypes = ReturnType<typeof addPostActionCreator> | ReturnType<typeof changeNewTextActionCreator>
-    | ReturnType<typeof updateNewMessageBodyCreator> | ReturnType<typeof sendMessageActionCreator> |
-    ReturnType<typeof followAC> | ReturnType<typeof unfollowAC> | ReturnType<typeof setUsersAC> | ReturnType<typeof setCurrentPageAC> |
-    ReturnType<typeof toggleIsFetchingAC> | ReturnType<typeof setUserProfileAC> | ReturnType<typeof setAuthUserData> | ReturnType<typeof toggleFollowingProgress>;
-    // ReturnType<typeof setTotalUsersCountAC>;
+// export type RootStateType = {
+//     profilePage: ProfilePageType;
+//     dialogsPage: DialogsPageType;
+// }
+export type ActionsTypes =
+    ReturnType<typeof addPostActionCreator>
+    | ReturnType<typeof changeNewTextActionCreator>
+    | ReturnType<typeof updateNewMessageBodyCreator>
+    | ReturnType<typeof sendMessageActionCreator>
+    |
+    ReturnType<typeof followSuccess>
+    | ReturnType<typeof unfollowSuccess>
+    | ReturnType<typeof setUsers>
+    | ReturnType<typeof setCurrentPage>
+    |
+    ReturnType<typeof toggleIsFetching>
+    | ReturnType<typeof setUserProfileAC>
+    | ReturnType<typeof setAuthUserData>
+    | ReturnType<typeof toggleFollowingProgress>;
+// ReturnType<typeof setTotalUsersCountAC>;

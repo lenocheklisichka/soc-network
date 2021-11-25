@@ -1,6 +1,7 @@
 import {v1} from "uuid";
-import {ActionsTypes, PostType, ProfileType} from "./types";
-
+import {ActionsTypes, PostType} from "./types";
+import {AppDispatch} from "./redux-store";
+import {usersAPI} from "../api/api";
 
 const ADD_POST = "ADD-POST";
 const CHANGE_NEW_POST_TEXT = "CHANGE-NEW-POST-TEXT";
@@ -42,7 +43,7 @@ const profileReducer = (state: InitialStateType = initialState, action: ActionsT
             return <InitialStateType>{...state, newPostText: action.newText}
         }
         case SET_USER_PROFILE: {
-            return { ...state, profile: action.profile }
+            return {...state, profile: action.profile}
         }
         default:
             return state;
@@ -50,23 +51,21 @@ const profileReducer = (state: InitialStateType = initialState, action: ActionsT
 }
 
 export const addPostActionCreator = () => {
-    return {
-        type: ADD_POST,
-    } as const
+    return {type: ADD_POST,} as const
 }
 
 export const changeNewTextActionCreator = (newText: string | undefined) => {
-    return {
-        type: CHANGE_NEW_POST_TEXT,
-        newText,
-    } as const
+    return {type: CHANGE_NEW_POST_TEXT, newText,} as const
 }
 
 export const setUserProfileAC = (profile: any): setUsersProfileAT => {
-    return {
-        type: SET_USER_PROFILE,
-        profile,
-    }
+    return {type: SET_USER_PROFILE, profile,}
+}
+
+export const getUsersProfile = (userId: string) => (dispatch: AppDispatch) => {
+    usersAPI.getProfile(userId).then((response: any) => {
+        dispatch(setUserProfileAC(response.data))
+    });
 }
 
 export default profileReducer;
