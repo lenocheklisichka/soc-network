@@ -22,17 +22,14 @@ const ProfileInfo = (props: ProfileInfoPropsType) => {
             <div className={classes.sochi}>
             </div>
             <div className={classes.profile}>
-                {/*<div>City: Sochi</div>*/}
-                {/*<div>Status: Studying</div>*/}
-
                     <img src={props.profile.photos.large || woman} alt="photo"/>
                 <div>
                     <div className={classes.profileName}>{props.profile.fullName}</div>
-                    <div><b>About Me:</b> {props.profile.aboutMe ||  "Student in it-incubator" }</div>
-                    <div className={classes.contact}>My contact: </div>
-                    <div className={classes.contacts}><b>vk:</b> {props.profile.contacts.vk || "https://vk.com/"}</div>
-                    <div className={classes.contacts}><b>instagram:</b> {props.profile.contacts.instagram || "https://instagram.com/"}</div>
-                    <div className={classes.contacts}><b>github:</b> {props.profile.contacts.github || "https://github.com/"}</div>
+                    <div><span>About Me:</span> {props.profile.aboutMe ||  "Student in it-incubator" }</div>
+                    <div className={classes.contact}><span>My contact:</span></div>
+                    <div className={classes.contacts}><span>vk:</span> {props.profile.contacts.vk || "https://vk.com"}</div>
+                    <div className={classes.contacts}><span>instagram:</span> {props.profile.contacts.instagram || "https://instagram.com"}</div>
+                    <div className={classes.contacts}><span>github:</span> {props.profile.contacts.github || "https://github.com"}</div>
                 </div>
             </div>
         </div>

@@ -4,8 +4,6 @@ import userPhoto from "../../assets/images/women.jpg";
 import React from "react";
 import {NavLink} from "react-router-dom";
 import Preloader from "../common/Preloader/Preloader";
-import {usersAPI} from "../../api/api";
-
 
 let Users = (props: UsersPropsType) => {
     let pageCount = Math.ceil(props.totalUsersCount / props.pageSize);

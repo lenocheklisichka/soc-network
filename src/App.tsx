@@ -9,6 +9,8 @@ import UsersContainer from "./components/Users/UsersContainer";
 import {NavbarContainer} from "./components/Navbar/NavbarContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
+import {Login} from "./components/Login/Login";
+
 
 const App = () => {
     return (
@@ -22,6 +24,7 @@ const App = () => {
                 <Route path={'/news'} component={News}/>
                 <Route path={'/musics'} component={Music}/>
                 <Route path={'/settings'} component={Settings}/>
+                <Route path={'/login'} render={() => <Login/>}/>
             </div>
         </div>
     );

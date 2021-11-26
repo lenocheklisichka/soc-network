@@ -27,11 +27,17 @@
     font-weight: bold;
 }
 
-.contacts {
+.contacts  {
     margin: 10px;
 }
 
-.contact {
+span {
+    font-weight: bold;
+}
+
+.contact span {
+    display: flex;
+    justify-content: center;
     margin-top: 10px;
     font-weight: bold;
 }
