@@ -13,7 +13,7 @@ const TOGGLE_IS_FOLLOWING_PROGRESS = "TOGGLE-IS-FOLLOWING-PROGRESS";
 const defaultState: InitialStateType = {
     users: [],
     pageSize: 5,
-    totalUsersCount: 100,
+    totalUsersCount: 110,
     currentPage: 1,
     isFetching: false,
     followingInProgress: [],

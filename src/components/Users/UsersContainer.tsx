@@ -8,6 +8,7 @@ import {connect} from "react-redux";
 import React from "react";
 import Users from "./Users";
 import Preloader from "../common/Preloader/Preloader";
+import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 
 export type UsersPropsType = {
     users: Array<UserType>
@@ -114,10 +115,10 @@ let mapStateToProps = (state: AppRootState): MapStatePropsType => {
 //     }
 // }
 
-export default connect(mapStateToProps, {
+export default withAuthRedirect( connect(mapStateToProps, {
     follow, unfollow,
     setUsers, setCurrentPage,
     toggleIsFetching, toggleFollowingProgress,
     getUsersThunk,
     //setTotalUsersCount: setTotalUsersCountAC,
-})(UsersContainer);
+})(UsersContainer));

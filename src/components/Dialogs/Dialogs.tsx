@@ -27,8 +27,6 @@ const Dialogs = (props: DialogsPropsType) => {
         console.log("Check function after " + e.target.value)
     }
 
-    if(!props.isAuth) return <Redirect to={"/login"}/>
-
     return (
         <div>
             <div className={classes.dialogs}>

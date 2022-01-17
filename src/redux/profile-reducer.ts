@@ -1,15 +1,21 @@
 import {v1} from "uuid";
 import {ActionsTypes, PostType} from "./types";
 import {AppDispatch} from "./redux-store";
-import {usersAPI} from "../api/api";
+import {profileAPI, usersAPI} from "../api/api";
 
 const ADD_POST = "ADD-POST";
 const CHANGE_NEW_POST_TEXT = "CHANGE-NEW-POST-TEXT";
 const SET_USER_PROFILE = "SET-USER-PROFILE";
+const SET_STATUS = "SET-STATUS";
 
 type setUsersProfileAT = {
     type: 'SET-USER-PROFILE'
     profile: any
+}
+
+type setStatusAT = {
+    type: 'SET-STATUS'
+    status: string
 }
 
 const initialState = {
@@ -20,6 +26,7 @@ const initialState = {
         {id: v1(), message: "I'm studying to be a front-end developer! A very demanded profession!", likesCount: 50},
     ],
     profile: null,
+    status: "",
 }
 
 export type InitialStateType = typeof initialState
@@ -45,6 +52,9 @@ const profileReducer = (state: InitialStateType = initialState, action: ActionsT
         case SET_USER_PROFILE: {
             return {...state, profile: action.profile}
         }
+        case SET_STATUS: {
+            return {...state, status: action.status}
+        }
         default:
             return state;
     }
@@ -62,10 +72,27 @@ export const setUserProfileAC = (profile: any): setUsersProfileAT => {
     return {type: SET_USER_PROFILE, profile,}
 }
 
+export const setStatus = (status: string): setStatusAT  => {
+    return {type: SET_STATUS, status}
+}
+
 export const getUsersProfile = (userId: string) => (dispatch: AppDispatch) => {
     usersAPI.getProfile(userId).then((response: any) => {
         dispatch(setUserProfileAC(response.data))
     });
+}
+export const getStatus = (userId: string) => (dispatch: AppDispatch) => {
+    profileAPI.getStatus(userId).then((response: any) => {
+        dispatch(setStatus(response.data))
+    })
+}
+
+export const updateStatus = (status: string) => (dispatch: AppDispatch) => {
+    profileAPI.updateStatus(status).then((response: any) => {
+        if (response.data.resultCode === 0) {
+            dispatch(setStatus(response.data))
+        }
+    })
 }
 
 export default profileReducer;

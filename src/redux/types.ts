@@ -1,4 +1,4 @@
-import {addPostActionCreator, changeNewTextActionCreator, setUserProfileAC} from "./profile-reducer";
+import {addPostActionCreator, changeNewTextActionCreator, setStatus, setUserProfileAC} from "./profile-reducer";
 import {sendMessageActionCreator, updateNewMessageBodyCreator} from "./dialogs-reducer";
 import {
      followSuccess, setCurrentPage,
@@ -69,6 +69,7 @@ export type  ProfileType = {
         small: string
         large: string
     }
+    updateStatus: (status:string) => void
 }
 
 export type DialogsPageType = {
@@ -94,5 +95,6 @@ export type ActionsTypes =
     ReturnType<typeof toggleIsFetching>
     | ReturnType<typeof setUserProfileAC>
     | ReturnType<typeof setAuthUserData>
-    | ReturnType<typeof toggleFollowingProgress>;
+    | ReturnType<typeof toggleFollowingProgress>
+    | ReturnType<typeof setStatus>;
 // ReturnType<typeof setTotalUsersCountAC>;

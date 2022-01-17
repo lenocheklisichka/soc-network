@@ -13,7 +13,6 @@
 .profile img {
     height: 200px;
     margin: 20px;
-    border-radius: 100%
 }
 
 .profile {
@@ -33,6 +32,12 @@
 
 span {
     font-weight: bold;
+}
+
+.status {
+    text-align: center;
+    margin-top: 20px;
+
 }
 
 .contact span {
