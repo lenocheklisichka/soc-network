@@ -1,0 +1,25 @@
+.formLogin {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.headerLogin {
+    color: #1565c0;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+
+}
+
+.form.error input,
+.form.error textarea {
+    border: 2px solid red;
+    border-radius: 5px;
+}
+
+.span {
+    color: red;
+}

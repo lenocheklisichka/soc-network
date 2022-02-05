@@ -1,29 +1,32 @@
 import {AppRootState} from "../../redux/redux-store";
 import {
-    follow, getUsersThunk, setCurrentPage, setUsers,
-    toggleFollowingProgress, toggleIsFetching, unfollow,
+    follow, getUsersThunk, unfollow,
 } from "../../redux/users-reducer";
-import {UserType} from "../../redux/types";
+import {UserType} from "../../types/types";
 import {connect} from "react-redux";
-import React from "react";
-import Users from "./Users";
+import React, {ComponentType} from "react";
 import Preloader from "../common/Preloader/Preloader";
 import {withAuthRedirect} from "../../hoc/withAuthRedirect";
+import Users from "./Users";
+import {compose} from "redux";
 
-export type UsersPropsType = {
-    users: Array<UserType>
+type MapStatePropsType = {
+    currentPage: number
+    pageSize: number
     isFetching: boolean
+    totalUsersCount: number
+    users: Array<UserType>
+    followingInProgress: Array<string>
+}
+type MapDispatchPropsType = {
+    getUsersThunk: (currentPage: number, pageSize: number) => void
     follow: (userID: string) => void
     unfollow: (userID: string) => void
-    pageSize: number
-    totalUsersCount: number
-    currentPage: number
-    onPageChanged: (pageNumber: number) => void
-    followingInProgress: Array<string>
-    toggleFollowingProgress: (isFetching: boolean, userID: string) => void
 }
 
-class UsersContainer extends React.Component<any> {
+type PropsType = MapStatePropsType & MapDispatchPropsType
+
+class UsersContainer extends React.Component<PropsType> {
 
     componentDidMount() {
         this.props.getUsersThunk(this.props.currentPage, this.props.pageSize)
@@ -31,16 +34,7 @@ class UsersContainer extends React.Component<any> {
 
     onPageChanged = (pageNumber: number) => {
         this.props.getUsersThunk(pageNumber, this.props.pageSize)
-        // this.props.setCurrentPage(pageNumber)
-        // this.props.toggleIsFetching(true)
-        //
-        // usersAPI.getUsers(pageNumber, this.props.pageSize)
-        //     .then((data: any) => {
-        //         this.props.toggleIsFetching(false)
-        //         this.props.setUsers(data.items)
-        //     });
     }
-
 
     render() {
         return <>
@@ -55,31 +49,11 @@ class UsersContainer extends React.Component<any> {
                          onPageChanged={this.onPageChanged}
                          isFetching={this.props.isFetching}
                          followingInProgress={this.props.followingInProgress}
-                         toggleFollowingProgress={this.props.toggleFollowingProgress}/>
+                />
             }
         </>
     }
 }
-
-type MapStatePropsType = {
-    users: Array<UserType>
-    totalUsersCount: number;
-    pageSize: number;
-    currentPage: number;
-    isFetching: boolean;
-    followingInProgress: Array<string>
-}
-
-// type MapDispatchPropsType = {
-//     follow: (userID: string) => void
-//     unfollow: (userID: string) => void
-//     setUsers: (users: Array<UserType>) => void
-//     setCurrentPage: (pageNumber: number) => void
-//     toggleIsFetching: (isFetching: boolean) => void
-//     // setTotalUsersCount: (totalCount: number) => void
-// }
-
-// export type UsersPropsType = MapStatePropsType & MapDispatchPropsType;
 
 let mapStateToProps = (state: AppRootState): MapStatePropsType => {
     return {
@@ -115,10 +89,12 @@ let mapStateToProps = (state: AppRootState): MapStatePropsType => {
 //     }
 // }
 
-export default withAuthRedirect( connect(mapStateToProps, {
-    follow, unfollow,
-    setUsers, setCurrentPage,
-    toggleIsFetching, toggleFollowingProgress,
-    getUsersThunk,
-    //setTotalUsersCount: setTotalUsersCountAC,
-})(UsersContainer));
+// export default withAuthRedirect( connect(mapStateToProps, {
+//     follow, unfollow,
+//     setUsers, setCurrentPage,
+//     toggleIsFetching, toggleFollowingProgress,
+//     getUsersThunk,
+//     setTotalUsersCount: setTotalUsersCountAC,
+// })(UsersContainer));
+export default compose<ComponentType>(
+    connect(mapStateToProps, {follow, unfollow, getUsersThunk,}), withAuthRedirect)(UsersContainer)

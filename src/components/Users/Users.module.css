@@ -73,10 +73,9 @@
 .pagesNumber {
     display: flex;
     cursor: pointer;
-    justify-content: space-between;
+    justify-content: center;
     color: coral;
-    margin: 20px auto;
-    width: 400px;
+    margin: 10px;
     text-align: center;
     font-size: 22px;
 }

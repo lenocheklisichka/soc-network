@@ -1,7 +1,7 @@
 import React from "react";
-import ProfileInfo, {PhotosType} from "./ProfileInfo/ProfileInfo";
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import MyPostsContainer from "./MyPosts/MyPostsContainer";
-import {ProfileType} from "../../redux/types";
+import {ProfileType} from "../../types/types";
 
 export type ProfilePropsType = {
     profile: ProfileType | null

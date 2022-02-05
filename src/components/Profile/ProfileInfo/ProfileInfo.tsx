@@ -1,8 +1,7 @@
 import React from "react";
 import classes from "./ProfileInfo.module.css";
-import {ProfileType} from "../../../redux/types";
+import {ProfileType} from "../../../types/types";
 import Preloader from "../../common/Preloader/Preloader";
-import woman from "./../../../assets/images/women.jpg";
 import avaWoman from "./../../../assets/images/photo-ava.jpg"
 import {ProfileStatus} from "./ProfileStatus";
 
@@ -26,7 +25,7 @@ const ProfileInfo = (props: ProfileInfoPropsType) => {
             <div className={classes.sochi}>
             </div>
             <div className={classes.profile}>
-                    <img src={props.profile.photos.large || avaWoman} alt="photo"/>
+                <img src={props.profile.photos.large || avaWoman} alt=""/>
                 <div>
                     <ProfileStatus status={props.status} aboutMe={props.profile.aboutMe}
                                    contacts={props.profile.contacts} fullName={props.profile.fullName}

@@ -1,11 +1,11 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
 import classes from "./Navbar.module.css";
-import {initialStateSidebarType} from "../../redux/sidebar-reducers";
+import {InitialStateSidebarType} from "../../redux/sidebar-reducers";
 import woman from "../Navbar/images-icons/woman-avatar.png";
 
 type SidebarPropsType = {
-    sidebar: initialStateSidebarType
+    sidebar: InitialStateSidebarType
 }
 
 

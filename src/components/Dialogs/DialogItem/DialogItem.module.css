@@ -1,27 +1,32 @@
 
 .boxNames {
     display: flex;
-    padding: 50px 0 30px 40px;
+    padding: 20px 0 30px 40px;
 }
+
 .avatarImg {
     width: 50px;
     height: 50px;
     border-radius: 40px;
 }
+
 .names {
     display: flex;
     align-items: center;
 }
+
 .names :hover {
-    color: gold;
+    color: green;
     cursor: hand;
 }
+
 .names .activeLink {
-    color: coral;
+    color: green;
     cursor: pointer;
     pointer-events: auto;
     font-weight: bold;
 }
+
 .names a {
     text-decoration: none;
     padding-left: 10px;

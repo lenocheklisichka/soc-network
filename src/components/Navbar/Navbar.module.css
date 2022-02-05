@@ -1,6 +1,6 @@
 .nav {
     grid-area: n;
-    background-color: coral;
+    background-color: lightgreen;
     font-size: 20px;
     padding: 30px;
 }
@@ -15,12 +15,12 @@
 }
 
 .item :hover, .itemSettings :hover {
-    color: dodgerblue;
+    color: #1565c0;
     font-weight: bold;
 }
 
 .item .activeLink, .itemSettings .activeLink {
-    color: aquamarine;
+    color: #1565c0;
     font-weight: bold;
 }
 
@@ -33,8 +33,7 @@
     width: 50px;
     height: 50px;
     border-radius: 50px;
-    border: 2px solid white;
-    background-color: aquamarine;
+    background-color: white;
 }
 
 .friend {

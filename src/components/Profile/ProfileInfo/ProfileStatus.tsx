@@ -1,4 +1,4 @@
-import {ProfileType} from "../../../redux/types";
+import {ProfileType} from "../../../types/types";
 import classes from "./ProfileInfo.module.css";
 import React, {ChangeEvent} from "react";
 import avaWomen from "./../../../assets/images/photo-ava.jpg"
@@ -24,7 +24,6 @@ export class ProfileStatus extends React.Component<ProfileStatusPropsType> {
         status: this.props.status
     }
     activateEditMode = () => {
-        console.log("this:", this)
         this.setState({
             editMode: true
         })
@@ -37,14 +36,14 @@ export class ProfileStatus extends React.Component<ProfileStatusPropsType> {
         updateStatus(this.state.status)
     }
 
-    onStatusChange = (e:ChangeEvent<HTMLInputElement>) => {
+    onStatusChange = (e: ChangeEvent<HTMLInputElement>) => {
         this.setState({
             status: e.currentTarget.value
         })
     }
 
-    componentDidUpdate(prevProps: Readonly<ProfileStatusPropsType>, prevState: Readonly<{}>) {
-        if(prevProps.status !== this.props.status) {
+    componentDidUpdate(prevProps: ProfileStatusPropsType, prevState: {}) {
+        if (prevProps.status !== this.props.status) {
             this.setState({
                 status: this.props.status
             })
@@ -64,10 +63,11 @@ export class ProfileStatus extends React.Component<ProfileStatusPropsType> {
                     <span>github:</span> {this.props.contacts.github || "https://github.com"}</div>
                 <div className={classes.status}>
                     {!this.state.editMode &&
-                    <span onDoubleClick={this.activateEditMode}>{this.props.status || "---------" }</span>}
+                    <span onDoubleClick={this.activateEditMode}>{this.props.status || "Hi"}</span>}
 
                     {this.state.editMode &&
-                    <input onChange={this.onStatusChange} autoFocus={true} onBlur={this.deActivateEditMode} value={this.state.status}/>}
+                    <input onChange={this.onStatusChange} autoFocus={true} onBlur={this.deActivateEditMode}
+                           value={this.state.status}/>}
                 </div>
             </div>
         );

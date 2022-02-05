@@ -1,0 +1,10 @@
+.padinator {
+   display: flex;
+}
+
+.btn {
+  border: none;
+  background-color: #fffacd;
+  font-size: 22px;
+  padding-left: 20px;
+}

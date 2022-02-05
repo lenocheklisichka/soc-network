@@ -1,14 +1,6 @@
 import {v1} from "uuid";
 
-type FriendsType = {
-    id: string;
-    name: string;
-}
-export type initialStateSidebarType = {
-    friends: Array<FriendsType>
-}
-
-let initialState: initialStateSidebarType= {
+const initialState = {
     friends: [
         {id: v1(), name: "Anna"},
         {id: v1(), name: "Julia"},
@@ -17,6 +9,8 @@ let initialState: initialStateSidebarType= {
         {id: v1(), name: "Ksenia"},
     ]
 }
-export const sidebarReducers = (state: initialStateSidebarType = initialState) => {
-    return state
-}
+
+export type InitialStateSidebarType = typeof initialState
+
+export const sidebarReducers = (state: InitialStateSidebarType = initialState)
+   :InitialStateSidebarType => {return state}

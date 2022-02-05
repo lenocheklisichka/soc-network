@@ -7,7 +7,7 @@ import authReducer from "./auth-reducer";
 import thunk from "redux-thunk";
 
 
-let rootReducers = combineReducers({
+let rootReducer = combineReducers({
     profilePage: profileReducer,
     dialogsPage: dialogsReducer,
     usersPage: usersReducer,
@@ -15,12 +15,12 @@ let rootReducers = combineReducers({
     auth: authReducer,
 })
 
-let store = createStore(rootReducers, applyMiddleware(thunk));
+let store = createStore(rootReducer, applyMiddleware(thunk));
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
 export type AppStoreType = typeof store
 // Infer the `RootState` and `AppDispatch` types from the store itself
-export type AppRootState = ReturnType<typeof rootReducers>
+export type AppRootState = ReturnType<typeof rootReducer>
 // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
 export type AppDispatch = typeof store.dispatch
 

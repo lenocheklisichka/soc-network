@@ -1,10 +1,10 @@
-import {initialStateSidebarType} from "../../redux/sidebar-reducers";
+import {InitialStateSidebarType} from "../../redux/sidebar-reducers";
 import {connect} from "react-redux";
 import Navbar from "./Navbar";
 import {AppRootState} from "../../redux/redux-store";
 
 type mapStateToPropsType = {
-    sidebar: initialStateSidebarType
+    sidebar: InitialStateSidebarType
 }
 
 const mapStateToProps = (state: AppRootState ): mapStateToPropsType => {
