@@ -8,7 +8,6 @@ import {useFormik} from "formik";
 import classes from "./Login.module.css"
 import {useDispatch} from "react-redux";
 import {loginTC} from "../../redux/auth-reducer";
-import {Redirect} from "react-router-dom";
 
 export type FormikErrorType = {
     email?: string
@@ -16,11 +15,11 @@ export type FormikErrorType = {
     rememberMe?: boolean
 }
 
-export type LoginType = {
-    isAuth?: boolean
-}
+// export type LoginType = {
+//     isAuth?: boolean
+// }
 
-export const LoginForm = (props: LoginType) => {
+export const LoginForm = () => {
     const dispatch = useDispatch()
     const formik = useFormik({
         initialValues: {
@@ -43,13 +42,13 @@ export const LoginForm = (props: LoginType) => {
             return errors;
         },
         onSubmit: values => {
-            dispatch(loginTC(values))
+            dispatch(loginTC(values.email,values.password,values.rememberMe))
             formik.resetForm()
         },
     })
-    if(props.isAuth) {
-        return <Redirect to={'/profile'}/>
-    }
+    // if(props.isAuth) {
+    //     return <Redirect to={'/profile'}/>
+    // }
     return (
         <Grid container justifyContent={'center'}>
             <form onSubmit={formik.handleSubmit} className={classes.form}>

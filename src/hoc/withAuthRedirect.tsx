@@ -13,9 +13,10 @@ const MapStateToPropsTypeForRedirect = (state: AppRootState): MapStatePropsType 
 export function withAuthRedirect<T>(Component: ComponentType<T>) {
     const AuthRedirectComponent = (props: MapStatePropsType) => {
         let {isAuth, ...restProps} = props
-        if (!isAuth) return <Redirect to={"/login"}/>
+        if (!isAuth) {
+            return <Redirect to={"/login"}/>
+        }
         return <Component {...restProps as T}/>
     }
-
     return connect(MapStateToPropsTypeForRedirect)(AuthRedirectComponent)
 }

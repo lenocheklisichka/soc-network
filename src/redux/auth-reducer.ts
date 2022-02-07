@@ -1,6 +1,6 @@
 import {ActionsTypes} from "../types/types";
 import {AppDispatch} from "./redux-store";
-import {authAPI, LoginParamsType, ResultCodesEnum} from "../api/api";
+import {authAPI, ResultCodesEnum} from "../api/api";
 
 const SET_USER_DATA = "SET-USER-DATA";
 
@@ -17,7 +17,7 @@ const authReducer = (state: InitialStateType = defaultState, action: ActionsType
     switch (action.type) {
         case SET_USER_DATA :
             return {
-                ...state, ...action.data, isAuth: true,
+                ...state, ...action.data
             }
         default:
             return state;
@@ -46,8 +46,8 @@ export const getAuthUserData = () => (dispatch: AppDispatch) => {
     })
 }
 
-export const loginTC = (data: LoginParamsType) => (dispatch: any) => {
-    authAPI.login(data).then((response: any) => {
+export const loginTC = (email:string,password:string,rememberMe:boolean) => (dispatch: any) => {
+    authAPI.login(email,password,rememberMe).then((response: any) => {
         if (response.data.resultCode === ResultCodesEnum.Success) {
             dispatch(getAuthUserData())
         }
