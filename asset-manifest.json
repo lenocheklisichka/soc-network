@@ -1,24 +1,26 @@
 {
   "files": {
-    "main.css": "/soc-network/static/css/main.af8262ae.chunk.css",
-    "main.js": "/soc-network/static/js/main.d637f8b9.chunk.js",
-    "main.js.map": "/soc-network/static/js/main.d637f8b9.chunk.js.map",
-    "runtime-main.js": "/soc-network/static/js/runtime-main.a570e162.js",
-    "runtime-main.js.map": "/soc-network/static/js/runtime-main.a570e162.js.map",
-    "static/js/2.2be8d3c9.chunk.js": "/soc-network/static/js/2.2be8d3c9.chunk.js",
-    "static/js/2.2be8d3c9.chunk.js.map": "/soc-network/static/js/2.2be8d3c9.chunk.js.map",
-    "static/js/3.d0159fbf.chunk.js": "/soc-network/static/js/3.d0159fbf.chunk.js",
-    "static/js/3.d0159fbf.chunk.js.map": "/soc-network/static/js/3.d0159fbf.chunk.js.map",
+    "main.css": "/soc-network/static/css/main.123d97bd.chunk.css",
+    "main.js": "/soc-network/static/js/main.d5469596.chunk.js",
+    "main.js.map": "/soc-network/static/js/main.d5469596.chunk.js.map",
+    "runtime-main.js": "/soc-network/static/js/runtime-main.dfa707bc.js",
+    "runtime-main.js.map": "/soc-network/static/js/runtime-main.dfa707bc.js.map",
+    "static/js/2.31156f0b.chunk.js": "/soc-network/static/js/2.31156f0b.chunk.js",
+    "static/js/2.31156f0b.chunk.js.map": "/soc-network/static/js/2.31156f0b.chunk.js.map",
+    "static/js/3.684e2a90.chunk.js": "/soc-network/static/js/3.684e2a90.chunk.js",
+    "static/js/3.684e2a90.chunk.js.map": "/soc-network/static/js/3.684e2a90.chunk.js.map",
     "index.html": "/soc-network/index.html",
-    "static/css/main.af8262ae.chunk.css.map": "/soc-network/static/css/main.af8262ae.chunk.css.map",
-    "static/js/2.2be8d3c9.chunk.js.LICENSE.txt": "/soc-network/static/js/2.2be8d3c9.chunk.js.LICENSE.txt",
+    "static/css/main.123d97bd.chunk.css.map": "/soc-network/static/css/main.123d97bd.chunk.css.map",
+    "static/js/2.31156f0b.chunk.js.LICENSE.txt": "/soc-network/static/js/2.31156f0b.chunk.js.LICENSE.txt",
+    "static/media/photo-ava.91f9e476.jpg": "/soc-network/static/media/photo-ava.91f9e476.jpg",
     "static/media/preloader.e2ef5a7f.gif": "/soc-network/static/media/preloader.e2ef5a7f.gif",
-    "static/media/woman-avatar.b562e6d8.png": "/soc-network/static/media/woman-avatar.b562e6d8.png"
+    "static/media/woman-avatar.b562e6d8.png": "/soc-network/static/media/woman-avatar.b562e6d8.png",
+    "static/media/women.56208115.jpg": "/soc-network/static/media/women.56208115.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.a570e162.js",
-    "static/js/2.2be8d3c9.chunk.js",
-    "static/css/main.af8262ae.chunk.css",
-    "static/js/main.d637f8b9.chunk.js"
+    "static/js/runtime-main.dfa707bc.js",
+    "static/js/2.31156f0b.chunk.js",
+    "static/css/main.123d97bd.chunk.css",
+    "static/js/main.d5469596.chunk.js"
   ]
 }
