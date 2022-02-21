@@ -1,5 +1,5 @@
 import axios, {AxiosResponse} from "axios";
-import { UserType } from "../types/types";
+import {UserType} from "../types/types";
 
 const instance = axios.create({
     withCredentials: true,
@@ -45,7 +45,9 @@ export type ResponseType<D = {}> = {
 export const usersAPI = {
     getUsers(currentPage: number, pageSize: number) {
         return instance.get<GetItemsType>(`users?page=${currentPage}&count=${pageSize}`,)
-            .then(response => {return response.data});
+            .then(response => {
+                return response.data
+            });
     },
     followUsers(id: string) {
         return instance.post(`follow/${id}`)
@@ -75,7 +77,11 @@ export const authAPI = {
         return instance.get<MeResponseType>(`auth/me`)
     },
     login(email: string, password: string, rememberMe: boolean = false) {
-        return instance.post<LoginParamsType, AxiosResponse<ResponseType<{userId: number}>>>('auth/login',{email,password,rememberMe})
+        return instance.post<LoginParamsType, AxiosResponse<ResponseType<{ userId: number }>>>('auth/login', {
+            email,
+            password,
+            rememberMe
+        })
     },
     logout() {
         return instance.delete('auth/login')

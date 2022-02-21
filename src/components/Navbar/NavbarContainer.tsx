@@ -7,10 +7,10 @@ type mapStateToPropsType = {
     sidebar: InitialStateSidebarType
 }
 
-const mapStateToProps = (state: AppRootState ): mapStateToPropsType => {
+const mapStateToProps = (state: AppRootState): mapStateToPropsType => {
     return {
         sidebar: state.sidebar
     }
 }
 
-export const NavbarContainer = connect(mapStateToProps) (Navbar);
+export const NavbarContainer = connect(mapStateToProps)(Navbar);

@@ -1,11 +1,16 @@
-import React from "react";
+import React, {ComponentType} from "react";
+import {compose} from "redux";
+import {connect} from "react-redux";
+import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 
-const Music = () => {
-    return (
-        <div>
-            Music
-        </div>
-    );
+class Music extends React.Component {
+    render() {
+        return (
+            <div>
+                Music
+            </div>
+        );
+    }
 }
 
-export default Music;
+export default compose<ComponentType>(connect(), withAuthRedirect)(Music)

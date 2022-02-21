@@ -8,7 +8,6 @@ import {ProfileStatus} from "./ProfileStatus";
 export type ProfileInfoPropsType = {
     profile: ProfileType | null
     status: string
-    // updateStatus: (status: string) => void
 }
 
 export type PhotosType = {

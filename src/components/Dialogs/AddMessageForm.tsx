@@ -1,7 +1,6 @@
 import React from "react";
 import classes from "./Dialogs.module.css";
 import {useFormik} from "formik";
-import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import {sendMessageActionCreator} from "../../redux/dialogs-reducer";
 import {useDispatch} from "react-redux";

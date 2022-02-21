@@ -5,6 +5,7 @@ import {
     toggleIsFetching, unfollowSuccess, setTotalUsersCountAC
 } from "../redux/users-reducer";
 import {setAuthUserData} from "../redux/auth-reducer";
+import {initializedSuccessAC} from "../redux/app-reducer";
 
 export type PostType = {
     id: string;
@@ -72,7 +73,7 @@ export type DialogsPageType = {
 }
 
 export type ActionsTypes =
-    ReturnType<typeof addPostActionCreator>
+    | ReturnType<typeof addPostActionCreator>
     | ReturnType<typeof sendMessageActionCreator>
     |
     ReturnType<typeof followSuccess>
@@ -86,3 +87,4 @@ export type ActionsTypes =
     | ReturnType<typeof toggleFollowingProgress>
     | ReturnType<typeof setStatus>
     | ReturnType<typeof setTotalUsersCountAC>
+    | ReturnType<typeof initializedSuccessAC>

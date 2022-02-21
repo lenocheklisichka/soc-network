@@ -8,11 +8,10 @@ type SidebarPropsType = {
     sidebar: InitialStateSidebarType
 }
 
-
 export const Navbar = (props: SidebarPropsType) => {
 
     const friendElements = props.sidebar.friends.map(f =>
-       <div className={classes.friend} key={f.id}><img src={woman} alt=''/>{f.name}</div>
+        <div className={classes.friend} key={f.id}><img src={woman} alt=''/>{f.name}</div>
     )
 
     return (

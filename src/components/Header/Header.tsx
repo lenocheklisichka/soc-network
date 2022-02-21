@@ -11,7 +11,7 @@ function Header(props: HeaderPropsType) {
             <div className={classes.loginBlock}>
                 {props.isAuth
                     ? <div>{props.login} - <Button type={'submit'} variant={'contained'}
-                                                 color={'primary'} onClick={props.logoutTC}>Logout</Button>
+                                                   color={'primary'} onClick={props.logoutTC}>Logout</Button>
                     </div>
                     : <NavLink to={'/login'}>Login</NavLink>}
             </div>

@@ -15,10 +15,6 @@ export type FormikErrorType = {
     rememberMe?: boolean
 }
 
-// export type LoginType = {
-//     isAuth?: boolean
-// }
-
 export const LoginForm = () => {
     const dispatch = useDispatch()
     const formik = useFormik({
@@ -42,7 +38,7 @@ export const LoginForm = () => {
             return errors;
         },
         onSubmit: values => {
-            dispatch(loginTC(values.email,values.password,values.rememberMe))
+            dispatch(loginTC(values.email, values.password, values.rememberMe))
             formik.resetForm()
         },
     })
