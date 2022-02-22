@@ -72,7 +72,7 @@ export type DialogsPageType = {
     messages: Array<MessageType>
 }
 
-export type ActionsTypes =
+export type ActionsType =
     | ReturnType<typeof addPostActionCreator>
     | ReturnType<typeof sendMessageActionCreator>
     |

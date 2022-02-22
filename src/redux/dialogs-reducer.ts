@@ -1,6 +1,5 @@
-import {DialogType, MessageType} from "../types/types";
+import {ActionsType, DialogType, MessageType} from "../types/types";
 import {v1} from "uuid";
-import {ActionsTypes} from "../types/types";
 
 const SEND_MESSAGE = "SEND-MESSAGE";
 
@@ -43,7 +42,7 @@ const initialState = {
 
 export type InitialStateType = typeof initialState
 
-const dialogsReducer = (state: InitialStateType = initialState, action: ActionsTypes): InitialStateType => {
+const dialogsReducer = (state: InitialStateType = initialState, action: ActionsType): InitialStateType => {
     switch (action.type) {
         case SEND_MESSAGE: {
             return {

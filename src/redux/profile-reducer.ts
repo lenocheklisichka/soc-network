@@ -1,5 +1,5 @@
 import {v1} from "uuid";
-import {ActionsTypes, PostType, ProfileType} from "../types/types";
+import {ActionsType, PostType, ProfileType} from "../types/types";
 import {AppDispatch} from "./redux-store";
 import {profileAPI, ResultCodesEnum, usersAPI} from "../api/api";
 
@@ -18,7 +18,7 @@ const initialState = {
 
 export type InitialStateType = typeof initialState
 
-const profileReducer = (state: InitialStateType = initialState, action: ActionsTypes): InitialStateType => {
+const profileReducer = (state: InitialStateType = initialState, action: ActionsType): InitialStateType => {
     switch (action.type) {
         case ADD_POST: {
             const newPost: PostType = {

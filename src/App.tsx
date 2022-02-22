@@ -1,4 +1,4 @@
-import React, {ComponentType} from 'react';
+import React, {Component, ComponentType} from 'react';
 import './App.css';
 import {Route, withRouter} from 'react-router-dom';
 import News from './components/News/News';
@@ -18,20 +18,19 @@ import Preloader from "./components/common/Preloader/Preloader";
 
 export type AppPropsType = {
     initializeAppTC: () => void
+    initialized: boolean
 }
 
-class App extends React.Component<AppPropsType> {
+class App extends Component<AppPropsType> {
 
     componentDidMount() {
         this.props.initializeAppTC()
     }
 
     render() {
-
-        if (!this.props.initializeAppTC) {
+        if (!this.props.initialized) {
             return <Preloader/>
         }
-
         return (
             <div className="app-wrapper">
                 <HeaderContainer/>
@@ -40,7 +39,7 @@ class App extends React.Component<AppPropsType> {
                     <Route path={'/profile/:userId?'} render={() => <ProfileContainer/>}/>
                     <Route path={'/dialogs'} render={() => <DialogsContainer/>}/>
                     <Route path={'/users'} render={() => <UsersContainer/>}/>
-                    <Route path={'/news'} render={() => <News/>} />
+                    <Route path={'/news'} render={() => <News/>}/>
                     <Route path={'/musics'} render={() => <Music/>}/>
                     <Route path={'/settings'} render={() => <Settings/>}/>
                     <Route path={'/login'} render={() => <Login/>}/>
@@ -54,7 +53,4 @@ let mapStateToProps = (state: AppRootState) => ({
     initialized: state.app.initialized
 })
 
-export default compose<ComponentType>(
-    withRouter,
-    connect(mapStateToProps, {initializeAppTC})
-)(App)
+export default compose<ComponentType>(withRouter, connect(mapStateToProps, {initializeAppTC}))(App)

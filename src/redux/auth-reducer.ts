@@ -1,4 +1,4 @@
-import {ActionsTypes} from "../types/types";
+import {ActionsType} from "../types/types";
 import {AppDispatch} from "./redux-store";
 import {authAPI, ResultCodesEnum} from "../api/api";
 
@@ -13,7 +13,7 @@ const defaultState = {
 
 export type InitialStateType = typeof defaultState
 
-const authReducer = (state: InitialStateType = defaultState, action: ActionsTypes): InitialStateType => {
+const authReducer = (state: InitialStateType = defaultState, action: ActionsType): InitialStateType => {
     switch (action.type) {
         case SET_USER_DATA :
             return {
