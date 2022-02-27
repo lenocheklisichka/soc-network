@@ -1,9 +1,9 @@
-.usersTitle {
-    padding: 10px;
-    font-size: 22px;
-    color: coral;
-    font-weight: bold;
-}
+/*.usersTitle {*/
+/*    padding: 10px;*/
+/*    font-size: 22px;*/
+/*    color: coral;*/
+/*    font-weight: bold;*/
+/*}*/
 
 .avatar {
     width: 80px;
@@ -12,18 +12,9 @@
 }
 
 .btn {
-    background-color: coral;
-    border: 1px solid coral;
-}
-
-.btn2 {
-    background-color: white;
-    border: 1px solid white;
-}
-
-.btn, .btn2 {
-    border-radius: 20px;
-    margin-left: 15px;
+    padding: 5px;
+    margin: auto;
+    display: flex;
 }
 
 .blockName {
@@ -56,25 +47,11 @@
     padding-top: 10px;
 }
 
-.button {
-    display: flex;
-    width: 100px;
-    margin: 0 auto;
-    padding: 10px 15px;
-    background-color: coral;
-    border-radius: 10px;
-    border: 1px solid coral;
-}
-
-.selectedPage {
-    font-weight: bold;
-}
 
 .pagesNumber {
     display: flex;
     cursor: pointer;
     justify-content: center;
-    color: coral;
     margin: 10px;
     text-align: center;
     font-size: 22px;

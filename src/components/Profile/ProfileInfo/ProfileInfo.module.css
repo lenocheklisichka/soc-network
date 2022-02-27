@@ -30,15 +30,9 @@
     margin: 10px;
 }
 
-span {
-    font-weight: bold;
-    padding-left: 10px;
-}
-
 .status {
     text-align: center;
     margin-top: 20px;
-
 }
 
 .contact span {

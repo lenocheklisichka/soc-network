@@ -3,7 +3,8 @@ import classes from "./Users.module.css"
 import {NavLink} from "react-router-dom"
 import Preloader from "./../common/Preloader/Preloader"
 import {UserType} from "../../types/types"
-import userPhoto from "./../../assets/images/women.jpg"
+import userPhoto from "./../../assets/images/avatar-men.png"
+import Button from "@mui/material/Button";
 
 export type UserPropsType = {
     users: Array<UserType>
@@ -27,19 +28,24 @@ export const User = (props: UserPropsType) => {
                             </NavLink>
                         </div>
                         <div>
-                            {u.followed ?
-                                <button className={classes.btn2}
+                            {u.followed ? <div className={classes.btn}>
+                                    <Button
+                                        style={{textTransform: 'lowercase'}}
                                         disabled={props.followingInProgress.some(id => id === u.id)}
                                         onClick={() => {
                                             props.unfollow(u.id)
                                         }}>Unfollow
-                                </button> :
-                                <button className={classes.btn}
+                                    </Button>
+                                </div>
+                                : <div className={classes.btn}>
+                                    <Button
+                                        style={{textTransform: 'lowercase'}}
                                         disabled={props.followingInProgress.some(id => id === u.id)}
                                         onClick={() => {
                                             props.follow(u.id)
                                         }}>Follow
-                                </button>
+                                    </Button>
+                                </div>
                             }
                         </div>
                     </span>

@@ -27,7 +27,7 @@ export const Paginator: React.FC<PaginatorPropsType> = ({
     const rightPortionPageNumber = portionNumber * portionSize
 
     return (
-        <div className={classes.padinator}>
+        <div className={classes.paginator}>
             {
                 portionNumber > 1 &&
                 <button className={classes.btn} onClick={() => {
