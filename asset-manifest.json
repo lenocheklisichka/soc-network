@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/soc-network/static/css/main.8638abe8.chunk.css",
-    "main.js": "/soc-network/static/js/main.936ca095.chunk.js",
-    "main.js.map": "/soc-network/static/js/main.936ca095.chunk.js.map",
-    "runtime-main.js": "/soc-network/static/js/runtime-main.dfa707bc.js",
-    "runtime-main.js.map": "/soc-network/static/js/runtime-main.dfa707bc.js.map",
-    "static/js/2.5d23155c.chunk.js": "/soc-network/static/js/2.5d23155c.chunk.js",
-    "static/js/2.5d23155c.chunk.js.map": "/soc-network/static/js/2.5d23155c.chunk.js.map",
-    "static/js/3.684e2a90.chunk.js": "/soc-network/static/js/3.684e2a90.chunk.js",
-    "static/js/3.684e2a90.chunk.js.map": "/soc-network/static/js/3.684e2a90.chunk.js.map",
+    "main.css": "/soc-network/static/css/main.04a17e4c.chunk.css",
+    "main.js": "/soc-network/static/js/main.18010841.chunk.js",
+    "main.js.map": "/soc-network/static/js/main.18010841.chunk.js.map",
+    "runtime-main.js": "/soc-network/static/js/runtime-main.47cb16a2.js",
+    "runtime-main.js.map": "/soc-network/static/js/runtime-main.47cb16a2.js.map",
+    "static/js/2.81291a02.chunk.js": "/soc-network/static/js/2.81291a02.chunk.js",
+    "static/js/2.81291a02.chunk.js.map": "/soc-network/static/js/2.81291a02.chunk.js.map",
+    "static/js/3.30ec2ce9.chunk.js": "/soc-network/static/js/3.30ec2ce9.chunk.js",
+    "static/js/3.30ec2ce9.chunk.js.map": "/soc-network/static/js/3.30ec2ce9.chunk.js.map",
     "index.html": "/soc-network/index.html",
-    "static/css/main.8638abe8.chunk.css.map": "/soc-network/static/css/main.8638abe8.chunk.css.map",
-    "static/js/2.5d23155c.chunk.js.LICENSE.txt": "/soc-network/static/js/2.5d23155c.chunk.js.LICENSE.txt",
+    "static/css/main.04a17e4c.chunk.css.map": "/soc-network/static/css/main.04a17e4c.chunk.css.map",
+    "static/js/2.81291a02.chunk.js.LICENSE.txt": "/soc-network/static/js/2.81291a02.chunk.js.LICENSE.txt",
     "static/media/avatar-men.7062c847.png": "/soc-network/static/media/avatar-men.7062c847.png",
     "static/media/photo-ava.91f9e476.jpg": "/soc-network/static/media/photo-ava.91f9e476.jpg",
     "static/media/preloader.e2ef5a7f.gif": "/soc-network/static/media/preloader.e2ef5a7f.gif",
@@ -19,9 +19,9 @@
     "static/media/women.56208115.jpg": "/soc-network/static/media/women.56208115.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.dfa707bc.js",
-    "static/js/2.5d23155c.chunk.js",
-    "static/css/main.8638abe8.chunk.css",
-    "static/js/main.936ca095.chunk.js"
+    "static/js/runtime-main.47cb16a2.js",
+    "static/js/2.81291a02.chunk.js",
+    "static/css/main.04a17e4c.chunk.css",
+    "static/js/main.18010841.chunk.js"
   ]
 }
