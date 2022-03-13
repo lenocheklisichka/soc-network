@@ -1,12 +1,13 @@
 .paginator {
-   display: flex;
+    display: flex;
 }
 
 .btn {
-  border: none;
-  background-color: #fffacd;
-  font-size: 22px;
-  padding-left: 20px;
+    border: none;
+    background-color: #fffacd;
+    font-size: 22px;
+    padding-left: 20px;
+    cursor: pointer;
 }
 
 span {

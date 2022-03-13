@@ -3,7 +3,6 @@ import classes from "./ProfileInfo.module.css";
 import React, {ChangeEvent} from "react";
 import avaWomen from "./../../../assets/images/photo-ava.jpg"
 import women from "./../../../assets/images/women.jpg"
-import {updateStatus} from "../../../redux/profile-reducer";
 
 export type ProfileStatusPropsType = {
     profile: ProfileType | null
@@ -33,7 +32,7 @@ export class ProfileStatus extends React.Component<ProfileStatusPropsType> {
         this.setState({
             editMode: false
         })
-        updateStatus(this.state.status)
+        // updateStatus(this.state.status)
     }
 
     onStatusChange = (e: ChangeEvent<HTMLInputElement>) => {

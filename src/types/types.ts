@@ -1,4 +1,4 @@
-import {addPostActionCreator, setStatus, setUserProfileAC} from "../redux/profile-reducer";
+import {addPostActionCreator, setStatusAC, setUserProfileAC} from "../redux/profile-reducer";
 import {sendMessageActionCreator} from "../redux/dialogs-reducer";
 import {
     followSuccess, setCurrentPage, setUsers, toggleFollowingProgress,
@@ -41,14 +41,9 @@ export type UserType = {
 // }
 
 export type ContactsType = {
-    github: string
     vk: string
-    facebook: string
     instagram: string
-    twitter: string
-    website: string
-    youtube: string
-    mainLink: string
+    github: string
 }
 
 export type PhotosType = {
@@ -85,6 +80,6 @@ export type ActionsType =
     | ReturnType<typeof setUserProfileAC>
     | ReturnType<typeof setAuthUserData>
     | ReturnType<typeof toggleFollowingProgress>
-    | ReturnType<typeof setStatus>
+    | ReturnType<typeof setStatusAC>
     | ReturnType<typeof setTotalUsersCountAC>
     | ReturnType<typeof initializedSuccessAC>

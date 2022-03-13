@@ -51,7 +51,7 @@ export const setUserProfileAC = (profile: ProfileType): SetUserProfileActionCrea
     ({type: SET_USER_PROFILE, profile} as const)
 
 type SetStatusActionType = { type: typeof SET_STATUS, status: string }
-export const setStatus = (status: string): SetStatusActionType =>
+export const setStatusAC = (status: string): SetStatusActionType =>
     ({type: SET_STATUS, status} as const)
 
 
@@ -62,13 +62,13 @@ export const getUsersProfile = (userId: string) => (dispatch: AppDispatch) => {
 }
 export const getStatus = (userId: string) => (dispatch: AppDispatch) => {
     profileAPI.getStatus(userId).then((response: any) => {
-        dispatch(setStatus(response.data))
+        dispatch(setStatusAC(response.data))
     })
 }
-export const updateStatus = (status: string) => (dispatch: AppDispatch) => {
+export const updateStatusTC = (status: string) => (dispatch: AppDispatch) => {
     profileAPI.updateStatus(status).then((response: any) => {
         if (response.data.resultCode === ResultCodesEnum.Success) {
-            dispatch(setStatus(response.data))
+            dispatch(setStatusAC(response.data.status))
         }
     })
 }
