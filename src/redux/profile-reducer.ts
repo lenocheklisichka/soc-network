@@ -2,10 +2,12 @@ import {v1} from "uuid";
 import {ActionsType, PostType, ProfileType} from "../types/types";
 import {AppDispatch} from "./redux-store";
 import {profileAPI, ResultCodesEnum, usersAPI} from "../api/api";
+import {AxiosResponse} from "axios";
 
 const ADD_POST = "ADD-POST";
 const SET_USER_PROFILE = "SET-USER-PROFILE";
 const SET_STATUS = "SET-STATUS";
+const DELETE_POST = "DELETE-POST"
 
 const initialState = {
     posts: [
@@ -20,6 +22,8 @@ export type InitialStateType = typeof initialState
 
 const profileReducer = (state: InitialStateType = initialState, action: ActionsType): InitialStateType => {
     switch (action.type) {
+        case "DELETE_POST":
+            return { ...state, posts: state.posts.filter(p => p.id !== action.postId)}
         case ADD_POST: {
             const newPost: PostType = {
                 id: v1(),
@@ -54,9 +58,10 @@ type SetStatusActionType = { type: typeof SET_STATUS, status: string }
 export const setStatusAC = (status: string): SetStatusActionType =>
     ({type: SET_STATUS, status} as const)
 
+export const deletePostAC = (postId: string) => ({type: "DELETE_POST", postId} as const)
 
 export const getUsersProfile = (userId: string) => (dispatch: AppDispatch) => {
-    usersAPI.getProfile(userId).then((response: any) => {
+    usersAPI.getProfile(userId).then((response: AxiosResponse) => {
         dispatch(setUserProfileAC(response.data))
     });
 }

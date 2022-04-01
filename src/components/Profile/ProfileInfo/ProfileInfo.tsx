@@ -26,8 +26,10 @@ const ProfileInfo = (props: ProfileInfoPropsType) => {
             <div className={classes.profile}>
                 <img src={props.profile.photos.large || avaWoman} alt=""/>
                 <div>
-                    <ProfileStatusHooks status={props.status} aboutMe={props.profile.aboutMe}
-                                        contacts={props.profile.contacts} fullName={props.profile.fullName}
+                    <ProfileStatusHooks status={props.status}
+                                        aboutMe={props.profile.aboutMe}
+                                        contacts={props.profile.contacts}
+                                        fullName={props.profile.fullName}
                     />
                 </div>
             </div>

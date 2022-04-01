@@ -1,4 +1,4 @@
-import {addPostActionCreator, setStatusAC, setUserProfileAC} from "../redux/profile-reducer";
+import {addPostActionCreator, deletePostAC, setStatusAC, setUserProfileAC} from "../redux/profile-reducer";
 import {sendMessageActionCreator} from "../redux/dialogs-reducer";
 import {
     followSuccess, setCurrentPage, setUsers, toggleFollowingProgress,
@@ -83,3 +83,4 @@ export type ActionsType =
     | ReturnType<typeof setStatusAC>
     | ReturnType<typeof setTotalUsersCountAC>
     | ReturnType<typeof initializedSuccessAC>
+    | ReturnType<typeof deletePostAC>

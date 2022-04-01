@@ -14,13 +14,11 @@ export type ProfileStatusPropsType = {
 }
 
 const ProfileStatusHooks = (props: ProfileStatusPropsType) => {
-    debugger
     const dispatch = useDispatch()
     const [editMode, setEditMode] = useState(false)
     const [status, setStatus] = useState(props.status)
 
     useEffect(() => {
-        debugger
         setStatus(props.status)
     }, [props.status])
 

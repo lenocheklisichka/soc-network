@@ -32,7 +32,7 @@ export class ProfileStatus extends React.Component<ProfileStatusPropsType> {
         this.setState({
             editMode: false
         })
-        // updateStatus(this.state.status)
+        this.props.updateStatus(this.state.status)
     }
 
     onStatusChange = (e: ChangeEvent<HTMLInputElement>) => {
