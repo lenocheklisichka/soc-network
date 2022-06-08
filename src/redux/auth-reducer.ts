@@ -2,7 +2,7 @@ import {ActionsType} from "../types/types";
 import {AppDispatch} from "./redux-store";
 import {authAPI, ResultCodesEnum} from "../api/api";
 
-const SET_USER_DATA = "SET-USER-DATA";
+const SET_USER_DATA = "auth/SET-USER-DATA";
 
 const defaultState = {
     userId: null as string | null,
@@ -37,21 +37,19 @@ type SetAuthUserDataActionType = {
 export const setAuthUserData = (userId: string | null, login: string | null, email: string | null, isAuth: boolean)
     : SetAuthUserDataActionType => ({type: SET_USER_DATA, data: {userId, login, email, isAuth}} as const)
 
-export const getAuthUserData = () => (dispatch: AppDispatch) => {
-   return authAPI.me().then((response: any) => {
-        if (response.data.resultCode === ResultCodesEnum.Success) {
-            let {id, login, email} = response.data.data
-            dispatch(setAuthUserData(id, login, email, true))
-        }
-    })
+export const getAuthUserData = () => async (dispatch: AppDispatch) => {
+    let response = await authAPI.me()
+    if (response.data.resultCode === ResultCodesEnum.Success) {
+        let {id, login, email} = response.data.data
+        dispatch(setAuthUserData(id, login, email, true))
+    }
 }
 
-export const loginTC = (email: string, password: string, rememberMe: boolean) => (dispatch: any) => {
-    authAPI.login(email, password, rememberMe).then((response: any) => {
-        if (response.data.resultCode === ResultCodesEnum.Success) {
-            dispatch(getAuthUserData())
-        }
-    })
+export const loginTC = (email: string, password: string, rememberMe: boolean) => async (dispatch: any) => {
+    let response = await authAPI.login(email, password, rememberMe)
+    if (response.data.resultCode === ResultCodesEnum.Success) {
+        dispatch(getAuthUserData())
+    }
 }
 
 export const logoutTC = () => (dispatch: AppDispatch) => {

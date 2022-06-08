@@ -38,18 +38,16 @@ const ProfileStatusHooks = (props: ProfileStatusPropsType) => {
     return (
         <div>
             <div className={classes.profileName}>{props.fullName || avaWomen || women}</div>
-            <div><span>About Me:</span> {props.aboutMe || "Student in it-incubator"}</div>
+            <div><span><b>About Me:</b></span> {props.aboutMe || "Frontend Developer"}</div>
             <div className={classes.contact}><span>My contact:</span></div>
-            <div className={classes.contacts}><span>vk:</span> {props.contacts.vk || "https://vk.com"}</div>
+            <div className={classes.contacts}><span><b>vk:</b></span> {props.contacts.vk || "https://vk.com"}</div>
             <div className={classes.contacts}>
-                <span>instagram:</span> {props.contacts.instagram || "https://instagram.com"}</div>
+                <span><b>telegram:</b></span> {props.contacts.telegram || "https://t.me/Lisichka_rizhaya"}</div>
             <div className={classes.contacts}>
-                <span>github:</span> {props.contacts.github || "https://github.com"}</div>
+                <span><b>github:</b></span> {props.contacts.github || "https://github.com/lenocheklisichka"}</div>
             <div className={classes.status}>
-
                 {!editMode &&
                 <span onClick={activateEditMode}>{props.status || "---"}</span>}
-
                 {editMode &&
                 <input onChange={onStatusChange} autoFocus={true}
                        onBlur={deActivateEditMode}

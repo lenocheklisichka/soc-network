@@ -12,7 +12,7 @@ const TOGGLE_IS_FOLLOWING_PROGRESS = "TOGGLE-IS-FOLLOWING-PROGRESS";
 
 const defaultState = {
     users: [] as Array<UserType>,
-    pageSize: 5,
+    pageSize: 10,
     totalUsersCount: 0,
     currentPage: 1,
     isFetching: true,
@@ -96,7 +96,6 @@ export const getUsersThunk = (currentPage: number, pageSize: number) => {
         });
     }
 }
-
 
 export const follow = (userID: string) => {
     return (dispatch: AppDispatch) => {

@@ -12,7 +12,7 @@ const DELETE_POST = "DELETE-POST"
 const initialState = {
     posts: [
         {id: v1(), message: "Hi, my name is Elena! I travel a lot around the world!", likesCount: 75},
-        {id: v1(), message: "I'm studying to be a front-end developer!", likesCount: 85},
+        {id: v1(), message: "I'm  frontend developer!", likesCount: 100},
     ] as Array<PostType>,
     profile: null as ProfileType | null,
     status: "",
@@ -60,13 +60,12 @@ export const setStatusAC = (status: string): SetStatusActionType =>
 
 export const deletePostAC = (postId: string) => ({type: "DELETE_POST", postId} as const)
 
-export const getUsersProfile = (userId: string) => (dispatch: AppDispatch) => {
-    usersAPI.getProfile(userId).then((response: AxiosResponse) => {
+export const getUsersProfile = (userId: string) => async (dispatch: AppDispatch) => {
+    let response = await usersAPI.getProfile(userId)
         dispatch(setUserProfileAC(response.data))
-    });
 }
 export const getStatus = (userId: string) => (dispatch: AppDispatch) => {
-    profileAPI.getStatus(userId).then((response: any) => {
+    profileAPI.getStatus(userId).then((response) => {
         dispatch(setStatusAC(response.data))
     })
 }

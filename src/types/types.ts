@@ -42,7 +42,7 @@ export type UserType = {
 
 export type ContactsType = {
     vk: string
-    instagram: string
+    telegram: string
     github: string
 }
 
