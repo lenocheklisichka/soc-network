@@ -8,6 +8,7 @@ import ProfileStatusHooks from "./ProfileStatusHooks";
 export type ProfileInfoPropsType = {
     profile: ProfileType | null
     status: string
+    updateStatus: (status: string) => void
 }
 
 export type PhotosType = {
@@ -19,6 +20,7 @@ const ProfileInfo = (props: ProfileInfoPropsType) => {
     if (!props.profile) {
         return <Preloader/>
     }
+
     return (
         <div>
             <div className={classes.sochi}>

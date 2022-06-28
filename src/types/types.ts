@@ -1,4 +1,9 @@
-import {addPostActionCreator, deletePostAC, setStatusAC, setUserProfileAC} from "../redux/profile-reducer";
+import {
+    addPostActionCreator,
+    deletePostAC,
+    setStatusAC,
+    setUserProfileAC
+} from "../redux/profile-reducer";
 import {sendMessageActionCreator} from "../redux/dialogs-reducer";
 import {
     followSuccess, setCurrentPage, setUsers, toggleFollowingProgress,
@@ -32,13 +37,7 @@ export type UserType = {
     status: string
     photos: PhotosType
     followed: boolean
-    // location: UserLocation
 }
-
-// export type UserLocation = {
-//     country: string,
-//     city: string
-// }
 
 export type ContactsType = {
     vk: string
