@@ -1,6 +1,6 @@
 import React, {Component, ComponentType} from 'react';
 import './App.css';
-import {Route, withRouter} from 'react-router-dom';
+import {Redirect, Route, Switch, withRouter} from 'react-router-dom';
 import News from './components/News/News';
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
@@ -15,6 +15,7 @@ import {compose} from "redux";
 import {AppRootState} from "./redux/redux-store";
 import {initializeAppTC} from "./redux/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
+import {NotFound404} from "./components/404/NotFound404";
 
 export type AppPropsType = {
     initializeAppTC: () => void
@@ -36,13 +37,17 @@ class App extends Component<AppPropsType> {
                 <HeaderContainer/>
                 <NavbarContainer/>
                 <div className="app-wrapper-content">
-                    <Route path={'/profile/:userId?'} render={() => <ProfileContainer/>}/>
-                    <Route path={'/dialogs'} render={() => <DialogsContainer/>}/>
-                    <Route path={'/users'} render={() => <UsersContainer/>}/>
-                    <Route path={'/news'} render={() => <News/>}/>
-                    <Route path={'/musics'} render={() => <Music/>}/>
-                    <Route path={'/settings'} render={() => <Settings/>}/>
-                    <Route path={'/login'} render={() => <Login/>}/>
+                    <Switch>
+                        <Route exact path='/' render={() => <Redirect to='/profile'/>}/>
+                        <Route path={'/profile/:userId?'} render={() => <ProfileContainer/>}/>
+                        <Route path={'/dialogs'} render={() => <DialogsContainer/>}/>
+                        <Route path={'/users'} render={() => <UsersContainer/>}/>
+                        <Route path={'/news'} render={() => <News/>}/>
+                        <Route path={'/musics'} render={() => <Music/>}/>
+                        <Route path={'/settings'} render={() => <Settings/>}/>
+                        <Route path={'/login'} render={() => <Login/>}/>
+                        <Route path='*' render={() => <NotFound404/>}/>
+                    </Switch>
                 </div>
             </div>
         );

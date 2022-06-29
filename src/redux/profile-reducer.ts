@@ -1,7 +1,7 @@
 import {v1} from "uuid";
 import {ActionsType, PostType, ProfileType} from "../types/types";
 import {AppDispatch} from "./redux-store";
-import {profileAPI, ResultCodesEnum, usersAPI} from "../api/api";
+import {profileAPI, usersAPI} from "../api/api";
 
 const ADD_POST = "ADD-POST";
 const SET_USER_PROFILE = "SET-USER-PROFILE";
@@ -22,15 +22,8 @@ export type InitialStateType = typeof initialState
 const profileReducer = (state: InitialStateType = initialState, action: ActionsType): InitialStateType => {
     switch (action.type) {
         case ADD_POST: {
-            const newPost: PostType = {
-                id: v1(),
-                message: action.newPostText,
-                likesCount: 0
-            }
-            return {
-                ...state,
-                posts: [...state.posts, newPost],
-            }
+            const newPost: PostType = {id: v1(), message: action.newPostText, likesCount: 0}
+            return {...state, posts: [...state.posts, newPost],}
         }
         case SET_USER_PROFILE: {
             return {...state, profile: action.profile}
@@ -39,7 +32,7 @@ const profileReducer = (state: InitialStateType = initialState, action: ActionsT
             return {...state, status: action.status}
         }
         case DELETE_POST:
-            return { ...state, posts: state.posts.filter(p => p.id !== action.postId)}
+            return {...state, posts: state.posts.filter(p => p.id !== action.postId)}
         default:
             return state
     }
@@ -61,7 +54,7 @@ export const deletePostAC = (postId: string) => ({type: DELETE_POST, postId} as 
 
 export const getUsersProfile = (userId: string) => async (dispatch: AppDispatch) => {
     let response = await usersAPI.getProfile(userId)
-        dispatch(setUserProfileAC(response.data))
+    dispatch(setUserProfileAC(response.data))
 }
 export const getStatus = (userId: string) => (dispatch: AppDispatch) => {
     profileAPI.getStatus(userId).then((response) => {
@@ -70,12 +63,8 @@ export const getStatus = (userId: string) => (dispatch: AppDispatch) => {
 }
 export const updateStatusTC = (status: string) => (dispatch: AppDispatch) => {
     profileAPI.updateStatus(status).then((response: any) => {
-        if (response.data.resultCode === ResultCodesEnum.Success) {
-            dispatch(setStatusAC(response.data.status))
-        }
+        dispatch(setStatusAC(response.data.status))
     })
 }
 
 export default profileReducer
-
-

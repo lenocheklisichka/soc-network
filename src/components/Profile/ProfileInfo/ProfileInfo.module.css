@@ -12,7 +12,7 @@
 
 .profile img {
     height: 200px;
-    margin: 20px;
+    margin: 40px;
 }
 
 .profile {
@@ -31,13 +31,11 @@
 }
 
 .status {
-    text-align: center;
-    margin-top: 20px;
+    margin: 20px;
 }
 
 .contact span {
     display: flex;
-    justify-content: center;
-    margin-top: 10px;
+    margin: 10px;
     font-weight: bold;
 }
