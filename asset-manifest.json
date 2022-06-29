@@ -1,27 +1,26 @@
 {
   "files": {
-    "main.css": "/soc-network/static/css/main.bf4b3e17.chunk.css",
-    "main.js": "/soc-network/static/js/main.24b26880.chunk.js",
-    "main.js.map": "/soc-network/static/js/main.24b26880.chunk.js.map",
-    "runtime-main.js": "/soc-network/static/js/runtime-main.72e9e767.js",
-    "runtime-main.js.map": "/soc-network/static/js/runtime-main.72e9e767.js.map",
-    "static/js/2.92a60bed.chunk.js": "/soc-network/static/js/2.92a60bed.chunk.js",
-    "static/js/2.92a60bed.chunk.js.map": "/soc-network/static/js/2.92a60bed.chunk.js.map",
-    "static/js/3.1e11fc4d.chunk.js": "/soc-network/static/js/3.1e11fc4d.chunk.js",
-    "static/js/3.1e11fc4d.chunk.js.map": "/soc-network/static/js/3.1e11fc4d.chunk.js.map",
+    "main.css": "/soc-network/static/css/main.85845af1.chunk.css",
+    "main.js": "/soc-network/static/js/main.dbab110f.chunk.js",
+    "main.js.map": "/soc-network/static/js/main.dbab110f.chunk.js.map",
+    "runtime-main.js": "/soc-network/static/js/runtime-main.9f6ba91c.js",
+    "runtime-main.js.map": "/soc-network/static/js/runtime-main.9f6ba91c.js.map",
+    "static/js/2.7cc5b7f7.chunk.js": "/soc-network/static/js/2.7cc5b7f7.chunk.js",
+    "static/js/2.7cc5b7f7.chunk.js.map": "/soc-network/static/js/2.7cc5b7f7.chunk.js.map",
+    "static/js/3.68ce5719.chunk.js": "/soc-network/static/js/3.68ce5719.chunk.js",
+    "static/js/3.68ce5719.chunk.js.map": "/soc-network/static/js/3.68ce5719.chunk.js.map",
     "index.html": "/soc-network/index.html",
-    "static/css/main.bf4b3e17.chunk.css.map": "/soc-network/static/css/main.bf4b3e17.chunk.css.map",
-    "static/js/2.92a60bed.chunk.js.LICENSE.txt": "/soc-network/static/js/2.92a60bed.chunk.js.LICENSE.txt",
+    "static/css/main.85845af1.chunk.css.map": "/soc-network/static/css/main.85845af1.chunk.css.map",
+    "static/js/2.7cc5b7f7.chunk.js.LICENSE.txt": "/soc-network/static/js/2.7cc5b7f7.chunk.js.LICENSE.txt",
     "static/media/avatar-men.7062c847.png": "/soc-network/static/media/avatar-men.7062c847.png",
-    "static/media/photo-ava.91f9e476.jpg": "/soc-network/static/media/photo-ava.91f9e476.jpg",
+    "static/media/photo-beautifulGirl.b2b45bd1.jpg": "/soc-network/static/media/photo-beautifulGirl.b2b45bd1.jpg",
     "static/media/preloader.e2ef5a7f.gif": "/soc-network/static/media/preloader.e2ef5a7f.gif",
-    "static/media/woman-avatar.b562e6d8.png": "/soc-network/static/media/woman-avatar.b562e6d8.png",
-    "static/media/women.56208115.jpg": "/soc-network/static/media/women.56208115.jpg"
+    "static/media/woman-avatar.b562e6d8.png": "/soc-network/static/media/woman-avatar.b562e6d8.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.72e9e767.js",
-    "static/js/2.92a60bed.chunk.js",
-    "static/css/main.bf4b3e17.chunk.css",
-    "static/js/main.24b26880.chunk.js"
+    "static/js/runtime-main.9f6ba91c.js",
+    "static/js/2.7cc5b7f7.chunk.js",
+    "static/css/main.85845af1.chunk.css",
+    "static/js/main.dbab110f.chunk.js"
   ]
 }
